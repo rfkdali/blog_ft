@@ -1,0 +1,13 @@
+%row
+  .col-md-9
+    %h1 
+      = @article.title
+      = link_to 'Back to home', articles_path, class:'btn btn-info'
+%row
+  .col-md-9
+    %p
+      %b Titre:
+      = @article.title
+    %p
+      %b Texte:
+      = @article.content
