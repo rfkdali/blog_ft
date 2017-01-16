@@ -19,6 +19,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'simple_form'
+gem 'redcarpet'
 
 group :development, :test do
   gem 'rspec-rails'

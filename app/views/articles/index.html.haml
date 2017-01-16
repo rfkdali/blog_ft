@@ -6,27 +6,6 @@
 
 %hr
 
-/ %table.table.table-bordered.table-striped
-/   %thead
-/     %tr
-/       %th
-/         title
-/       %th
-/         content
-/       %th
-/         actions
-/   %tbody
-/     - @articles.all.each do |article|
-/       %tr
-/         %td
-/           = article.title
-/         %td
-/           = article.content
-/         %td
-/           = link_to 'Show', article_path(article) , class:'btn btn-info'
-/           = link_to 'Delete',  article,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"
-
-
 .container
   .col-sm-10.col-sm-offset-1.col-xs-12
   - @articles.each do |article|
@@ -36,5 +15,10 @@
       %h6  
         = article.created_at.strftime('%b %d, %Y')
 
-      = raw(article.content).truncate(358)
-      = link_to "READ MORE", article_path(article)
+      = articles_content_md_truncated(article)
+      = link_to 'Read more', article_path(article) , class:'btn btn-info'
+      = link_to 'Delete',  article,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"
+
+      %hr
+
+
