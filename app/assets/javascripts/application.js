@@ -24,8 +24,7 @@ $(document).on('turbolinks:load', function() {
   return angular.bootstrap(document.body, ['blogApp']);
 });
 
-blogApp.controller("articlesController", function ($scope, $http, $window) {
-
+blogApp.controller('articlesController', ['$scope', '$http', '$window', function($scope, $http, $window) { 
   // Fetch articles from articles.json
   $scope.getArticles = function () {
     $http.get('/js_articles.json')
@@ -56,8 +55,9 @@ blogApp.controller("articlesController", function ($scope, $http, $window) {
     articleContent.classList.remove("ellipsis");
     // Remove 'Read more' button
     articleElement.style.display="none";
-  }
-});
+  };
+
+}]);
 
 blogApp.filter('markdown', function() {
   var converter = new Showdown.converter();
