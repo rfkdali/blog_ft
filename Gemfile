@@ -20,10 +20,10 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'simple_form'
 gem 'redcarpet'
+gem 'angularjs-rails'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'ffaker'
 end
 
 group :development do
@@ -33,7 +33,6 @@ group :development do
   gem 'spring-watcher-listen'
   gem 'spring-commands-rspec'
   gem 'pry-rails'
-  gem 'annotate'
 end
 
 group :test do

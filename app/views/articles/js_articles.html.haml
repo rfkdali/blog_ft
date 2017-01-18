@@ -1,0 +1,24 @@
+%row
+  .col-md-9
+    %h1 
+      Articles
+      = link_to 'Back to home', articles_path, class:'btn btn-primary'
+
+%row
+  .col-md-9
+    %h2
+      "Read more" feature with vanillaJS
+
+    %row
+      .col-md-9
+        %section(ng-repeat="article in articles")
+          .articles(id="article-{{article.id}}")
+            %h2
+              {{article.title}}
+            %p.ellipsis{"ng-bind-html": "article.content | markdown"}
+            
+
+            %a.btn.btn-success.more(href=""){"ng-click":"readMore()"}
+              Read More
+
+          %hr

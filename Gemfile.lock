@@ -40,9 +40,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.0)
       public_suffix (~> 2.0, >= 2.0.2)
-    annotate (2.6.5)
-      activerecord (>= 2.3.0)
-      rake (>= 0.8.7)
+    angularjs-rails (1.5.0)
     arel (7.1.4)
     autoprefixer-rails (6.6.1)
       execjs
@@ -76,7 +74,6 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    ffaker (2.3.0)
     ffi (1.9.17)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
@@ -233,13 +230,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  annotate
+  angularjs-rails
   bootstrap-sass
   capybara
   coffee-rails (~> 4.2)
   database_cleaner
   factory_girl_rails
-  ffaker
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails

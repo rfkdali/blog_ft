@@ -16,6 +16,14 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def js_articles
+    @js_articles = Article.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @js_articles }
+    end
+  end
+
   def show
     @article = Article.find(params[:id])
   end

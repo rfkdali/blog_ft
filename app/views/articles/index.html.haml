@@ -2,23 +2,25 @@
   .col-md-9
     %h1 
       Articles
-      = link_to 'New article', new_article_path, class:'btn btn-info'
+      = link_to 'New article', new_article_path, class:'btn btn-primary'
+      = link_to 'Interactive articles', js_articles_path, {"class":"btn btn-warning", "data-toggle":"tooltip", "title":"'Read more' feature with vanillaJs!"}
 
-%hr
+    %hr
 
-.container
-  .col-sm-10.col-sm-offset-1.col-xs-12
-  - @articles.each do |article|
-    .col-xs-12
-      %h2
-        = article.title
-      %h6  
-        = article.created_at.strftime('%b %d, %Y')
+%row
+  .col-md-9
+    - @articles.each do |article|
+      .col-xs-12
+        %h2
+          = article.title
+        %h5 
+          = article.created_at.strftime('%b %d, %Y')
 
-      = articles_content_md_truncated(article)
-      = link_to 'Read more', article_path(article) , class:'btn btn-info'
-      = link_to 'Delete',  article,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"
+        %section
+          = articles_content_md_truncated(article)
+
+        = link_to 'Read more', article_path(article) , class:'btn btn-info'
+        = link_to 'Delete',  article,  method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger"
 
       %hr
-
 
